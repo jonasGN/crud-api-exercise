@@ -31,12 +31,12 @@ public class ClientResource {
 
 	@GetMapping
 	public ResponseEntity<Page<ClientDTO>> fetchAll(
-			@RequestParam(name = "page", defaultValue = "0") Integer page,
-			@RequestParam(name = "linesPerPage", defaultValue = "5") Integer linerPerPage,
-			@RequestParam(name = "direction", defaultValue = "ASC") String direction,
-			@RequestParam(name = "orderBy", defaultValue = "id"
-	) String orderBy) {
-		PageRequest pageRequest = PageRequest.of(page, linerPerPage, Direction.valueOf(direction), orderBy);
+			@RequestParam(defaultValue = "0") Integer page,
+			@RequestParam(defaultValue = "5") Integer linesPerPage,
+			@RequestParam(defaultValue = "ASC") String direction,
+			@RequestParam(defaultValue = "id") String orderBy
+	) {
+		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
 
 		Page<ClientDTO> result = service.fetchAllPaged(pageRequest);
 

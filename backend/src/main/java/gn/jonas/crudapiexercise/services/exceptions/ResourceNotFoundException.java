@@ -15,7 +15,7 @@ public class ResourceNotFoundException extends RuntimeException {
 	}
 
 	public ResourceNotFoundException(Long resourceId) {
-		this("Could not find this resource by given ID: " + resourceId);
+		this("Could not find this resource by the given ID: " + resourceId);
 	}
 
 }

@@ -105,4 +105,10 @@ public class Client implements Serializable {
 		return Objects.equals(cpf, other.cpf) && Objects.equals(id, other.id);
 	}
 
+	@Override
+	public String toString() {
+		return "{id: " + id + ", name: " + name + ", cpf: " + cpf + ", income: " + income + ", birthdate: " + birthDate
+				+ ", children: " + children + "}";
+	}
+
 }
